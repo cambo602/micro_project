@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--To make a new page (and preserve this html tempate for future use) click on File > Save As and then give the file a new name e.g. myawsomepage.html or aboutinventor.html. Make sure that there are no spaces in your file name.-->
+<html>
+
+<head>
+    <title>Tester Page</title>
+
+    <!-- This link element attaches your stylesheet to this page.  Read the path carefully to work out where the stylesheet must be. -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <!-- the <script> element that points to the jquery/javascript translator must precede the <script> element that points to you .js file-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type='text/javascript' src='../js/script.js'></script>
+
+</head>
+
+<body>
+    <h1>A World of Ice and Fire</h1>
+    <h2>An interactive map of Game of Thrones</h2>
+    <div class="tab">
+        <button class="tablinks" onclick="openEvent(event, 'Home')">Home</button>
+        <button class="tablinks" onclick="openEvent(event, 'Map')">Clickable Map</button>
+        <button class="tablinks" onclick="openEvent(event, 'About')">About</button>
+
+    </div>
+    <div id="wrapper">
+        <img id="myimage" src="../images/map.jpg" width="400" height="auto" />
+        <div id="myresult" class="img-zoom-result"> </div>
+    </div>
+
+    <script>
+        // Initiate zoom effect:
+        imageZoom("myimage", "myresult");
+    </script>
+    <div id="Home" class="tabcontent">
+    </div>
+
+    <div id="About" class="tabcontent">
+        <h3>About</h3>
+        <h4>Why?</h4>
+
+        <p>I often find myself lost, and confused while reading new stories with large interconnected worlds. I thought
+            of solving this problem by making an interactive map so I could more easily remember details about the
+            world. I used html to create an interactive map that I could easily edit if necessary to add more detail and
+            more information to the map as it came up in the books.
+        </p>
+
+
+        <h4>Frustrations?</h4>
+
+        <p>I had big problems trying to have both implementations of the interactive maps on the same image, the
+            scripts appeared to interfere with each other, and only one of them would work at any given time. I also
+            grew to dislike the tabs I had implemented, at first I wanted to keep just one html file, so I had the
+            content display and hide based on the tab, but this caused problems displaying some elements of the site.
+        </p>
+
+        <h4>Success</h4>
+
+        <p>I loved learning how to manipulate images in html. I believe it has tons of useful applications that would
+            be fun to build on further. I also learned usemaps for the project which helped to easily make an image
+            clickable.</p>
+
+        <h4>How I would build it differently for next time?</h4>
+
+        <p>Next time I would combine the implementations for the zoom and the clickable portion of the map so the
+            scripts would not fight for control and would work together on the same image as intended. I would also
+            change the tabs to link to different html files instead of keeping them all in one file so I could more
+            easily display information without problem.</p>
+        </p>
+    </div>
+
+    <div id="Map" class="tabcontent">
+        <img src="../images/map.jpg" usemap="#click" width="600" height="auto" />
+        <map name="click">
+            <area shape="rect" coords="380, 890, 430, 920" onclick="city1()">
+            <area shape="rect" coords="270, 380, 300, 400" onclick="city2()">
+            <area shape="rect" coords="500, 825, 545, 850" onclick="city3()">
+            <area shape="rect" coords="360, 200, 405, 220" onclick="city4()">
+            <area shape="rect" coords="100, 1115, 130, 1140" onclick="city5()">
+        </map>
+        <script>
+            function city1() {
+                alert("This is Kings Landing \nCapital of the seven kingdoms")
+            }
+            function city2() {
+                alert("This is Winterfell\nHome of house Stark")
+            }
+            function city3() {
+                alert("This is DragonStone\nThe home of the dragons")
+            }
+            function city4() {
+                alert("This is Castle Black\nThe biggest castle on the wall")
+            }
+            function city5() {
+                alert("This is old town\nRuled by the Hightowers")
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>
